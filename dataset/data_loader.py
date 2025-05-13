@@ -95,6 +95,7 @@ def load_sample_data(config, n_samples, local_dir="bronze"):
     return file_name
 
 
+# Function to push the data from local storage to azure containers
 def push_to_azure_container(local_base_dir):
 
     # Config
@@ -123,13 +124,4 @@ def push_to_azure_container(local_base_dir):
 
 
 if __name__ == "__main__":
-
-    # # Open sampleInfo.yaml file for language and n_samples info
-    # with open("sampleInfo.yaml") as f:
-    #     config = yaml.safe_load(f)
-
-    # # Download and load the data
-    # samples_output_path = load_sample_data(config=config, n_samples=1000000)
-
-    # Push bronze direc to cloud(azure)
-    push_to_azure_container("bronze")
+    pass
