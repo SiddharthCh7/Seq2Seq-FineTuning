@@ -1,0 +1,10 @@
+graph LR
+    A[Data Sources] -->|GCS/S3| B[DVC Versioning]
+    B -->|Parquet| C[PySpark Preprocessing]
+    C -->|HuggingFace Dataset| D[MLM Training]
+    D -->|MLflow| E[Model Registry]
+    E -->|ONNX| F[FastAPI Server]
+    F -->|Kubernetes| G[Load Balancer]
+    G --> H[User Requests]
+    H -->|Prometheus| I[Monitoring]
+    I --> J[Retraining Trigger]

@@ -1,0 +1,8 @@
+env
+.gitignore
+dataset/__pycache__
+dataset/bronze
+media
+workflow
+license
+README
