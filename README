@@ -55,7 +55,7 @@ Once the raw data is stored in Azure, we mount the Blob Storage in **Databricks*
 
 ![Data Transformation](media/databricks_map_partitions.png)
 
-![Silver Container](media/azure-silver.png.png)
+![Silver Container](media/azure-silver.png)
 
 ### 🔗 Why this step?
 Using Spark on Databricks gives the ability to process large datasets at scale. Saving clean data in a silver layer ensures consistent downstream consumption for model training.
