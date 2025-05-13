@@ -1,8 +1,12 @@
 env
 .gitignore
+scripts/__pycache__
 dataset/__pycache__
 dataset/bronze
 media
 workflow
 license
 README
+mt5-lora
+mlruns
+mlartifacts
