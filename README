@@ -14,18 +14,7 @@ This repository contains an **end-to-end fine-tuning pipeline** for Seq2Seq mode
 
 ---
 
-## 📊 Project Workflow
-
-```mermaid
-graph TB
-    A[Data API - Hugging Face (Culturax)] --> B[Azure Blob - Bronze Layer]
-    B --> C[Databricks Spark Transformation]
-    C --> D[Azure Blob - Silver Layer]
-    D --> E[Training Environment (Colab)]
-    E --> F[Fine-tune Seq2Seq Model]
-    F --> G[Log Metrics & Artifacts to MLflow]
-
----
+# 📊 Project Workflow
 
 ## 🏁 Step 1: Data Ingestion from Hugging Face
 
