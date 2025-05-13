@@ -10,7 +10,7 @@ This repository contains an **end-to-end fine-tuning pipeline** for Seq2Seq mode
 
 ## 📌 Architecture Overview
 
-![Architecture Diagram](https://your-image-link.com/architecture.png)
+**Architecture Diagram**: ![Architecture Diagram](./media/flowchart.png)
 
 ---
 
@@ -27,9 +27,9 @@ We use the **Culturax dataset** from Hugging Face's Datasets Hub. This dataset i
 ### 🔗 Why this step?
 Storing raw data in a cloud-native, scalable object store allows for reusability, traceability, and versioning — all essential for robust MLOps.
 
-![Data Ingestion Screenshot](./media/data-ingestion-script.png)
+**Data Ingestion**: ![Data Ingestion](./media/data-ingestion-script.png)
 
-![Bronze Container](./media/azure-bronze.png)
+**Bronze Container**: ![Bronze Container](./media/azure-bronze.png)
 
 ---
 
@@ -40,11 +40,11 @@ Once the raw data is stored in Azure, we mount the Blob Storage in **Databricks*
 - Text is tokenized using model's tokenizer.
 - Transformed data is saved to the **Silver layer** of Azure Blob.
 
-![Databricks Spark Session](./media/databricks_start_session.png)
+**Spark Session**: ![Spark Session](./media/databricks_start_session.png)
 
-![Data Transformation](./media/databricks_map_partitions.png)
+**Data Transformation**: ![Data Transformation](./media/databricks_map_partitions.png)
 
-![Silver Container](./media/azure-silver.png)
+**Silver Container**: ![Silver Container](./media/azure-silver.png)
 
 ### 🔗 Why this step?
 Using Spark on Databricks gives the ability to process large datasets at scale. Saving clean data in a silver layer ensures consistent downstream consumption for model training.
@@ -59,9 +59,9 @@ The transformed data is downloaded from the `silver` container and loaded into a
 - Training can be ported to any environment.
 - Uses `Datasets`, `Transformers`, and optionally `Accelerate` for efficient training.
 
-![Colab Training](./media/train-logs-terminal.png)
+**Training Logs**: ![Training](./media/train-logs-terminal.png)
 
-![Containerization using Docker](./media/Docker-script.png)
+**Containerization using Docker**: ![Containerization using Docker](./media/Docker-script.png)
 
 ### 🔗 Why this step?
 Training in a container ensures reproducibility and compatibility with any cloud/edge device in future deployments.
@@ -77,13 +77,13 @@ Training runs are logged using **MLflow**:
 
 This gives you a centralized dashboard to compare different runs and manage model versions.
 
-![MLflow Experiments](./media/mlflow-experiment.png)
+**MLflow Experiments**: ![MLflow Experiments](./media/mlflow-experiment.png)
 
-![MLflow Metrics](./media/mlflow-model-metrics.png)
+**MLflow Metrics**: ![MLflow Metrics](./media/mlflow-model-metrics.png)
 
-![MLflow Model](./media/mlflow-registered-model.png)
+**MLflow Models**: ![MLflow Model](./media/mlflow-registered-models.png)
 
-![MLflow Model Versions](./media/mlflow-model-versions.png)
+**MLflow Model Versions**: ![MLflow Model Versions](./media/mlflow-model-versions.png)
 
 ### 🔗 Why this step?
 MLflow ensures traceability and experiment reproducibility. It also allows easier deployment integration later on (e.g., serving models via MLflow REST APIs).
@@ -97,9 +97,9 @@ The entire workflow — from data fetch to model training and logging — is enc
 - Dockerfile defines dependencies (Python, PyTorch, Hugging Face, Spark, MLflow).
 - Environment is portable and reproducible across local, cloud, and CI/CD setups.
 
-![Docker Script](./media/Docker-script.png)
+**Docker Script**: ![Docker Script](./media/Docker-script.png)
 
-![Docker Container](./media/Docker-container.png)
+**Docker Container**: ![Docker Container](./media/Docker-container.png)
 
 ### 🔗 Why this step?
 Containerization eliminates "it works on my machine" problems, and allows seamless scaling to cloud VMs or Kubernetes clusters.
