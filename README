@@ -16,9 +16,8 @@ This repository contains an **end-to-end fine-tuning pipeline** for Seq2Seq mode
 
 ## 📊 Project Workflow
 
-```markdown
 ```mermaid
-graph TD
+graph TB
     A[Data API - Hugging Face (Culturax)] --> B[Azure Blob - Bronze Layer]
     B --> C[Databricks Spark Transformation]
     C --> D[Azure Blob - Silver Layer]
