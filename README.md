@@ -61,11 +61,6 @@ The transformed data is downloaded from the `silver` container and loaded into a
 
 **Training Logs**: ![Training](./media/train-logs-terminal.png)
 
-**Containerization using Docker**: ![Containerization using Docker](./media/Docker-script.png)
-
-### 🔗 Why this step?
-Training in a container ensures reproducibility and compatibility with any cloud/edge device in future deployments.
-
 ---
 
 ## 📈 Step 4: Experiment Tracking with MLflow
